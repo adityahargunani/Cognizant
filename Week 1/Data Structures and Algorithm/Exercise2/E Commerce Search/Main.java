@@ -1,56 +1,5 @@
 import java.util.*;
 
-class Product {
-    int productId;
-    String productName;
-    String category;
-
-    Product(int productId, String productName, String category) {
-        this.productId = productId;
-        this.productName = productName;
-        this.category = category;
-    }
-
-    void display() {
-        System.out.println("Product ID: " + productId);
-        System.out.println("Product Name: " + productName);
-        System.out.println("Category: " + category);
-    }
-}
-
-class LinearSearch {
-    public Product search(Product[] products, int key) {
-        for (Product product : products) {
-            if (product.productId == key) {
-                return product;
-            }
-        }
-        return null;
-    }
-}
-
-class BinarySearch {
-    public Product search(Product[] products, int key) {
-        int left = 0;
-        int right = products.length - 1;
-
-        while (left <= right) {
-            int mid = (left + right) / 2;
-
-            if (products[mid].productId == key) {
-                return products[mid];
-            }
-
-            if (products[mid].productId < key) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        return null;
-    }
-}
-
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
